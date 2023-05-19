@@ -5,7 +5,7 @@ name: Check PR Validity
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  pull_request:
+  push:
     branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -28,7 +28,7 @@ jobs:
           java-version: '17'
       # Runs a single command using the runners shell
       - name: Dry-run execution
-        run: java -jar kafkactl.jar get topics
+        run: java -jar kafkactl.jar apply -f topics/
         env: # Or as an environment variable
           KAFKACTL_API: http://34.140.204.135:7777
           KAFKACTL_USER_TOKEN: ${{ secrets.GL_TOKEN }}
