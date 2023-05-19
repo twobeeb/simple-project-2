@@ -22,13 +22,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '17'
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: Dry-run execution
+        run: java -jar kafkactl.jar get topics
+        env: # Or as an environment variable
+          KAFKACTL_API: http://34.140.204.135:7777
+          KAFKACTL_USER_TOKEN: ${{ secrets.GL_TOKEN }}
+          KAFKACTL_CURRENT_NAMESPACE: myNamespace
