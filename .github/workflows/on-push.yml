@@ -32,4 +32,4 @@ jobs:
         env: # Or as an environment variable
           KAFKACTL_API: http://34.140.204.135:7777
           KAFKACTL_USER_TOKEN: ${{ secrets.GL_TOKEN }}
-          KAFKACTL_CURRENT_NAMESPACE: myNamespace
+          KAFKACTL_CURRENT_NAMESPACE: anotherNamespace

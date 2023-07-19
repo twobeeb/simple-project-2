@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Topic
 metadata:
-  name: abc.myTopic
+  name: def.myTopic
 spec:
   replicationFactor: 1
   partitions: 3
@@ -14,7 +14,7 @@ spec:
 apiVersion: v1
 kind: Topic
 metadata:
-  name: abc.myTopic2
+  name: def.myTopic2
 spec:
   replicationFactor: 1
   partitions: 3

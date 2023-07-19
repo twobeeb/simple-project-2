@@ -3,10 +3,10 @@ apiVersion: v1
 kind: AccessControlEntry
 metadata:
   name: acl-topic-a-b
-  namespace: myNamespace
+  namespace: anotherNamespace
 spec:
   resourceType: TOPIC
-  resource: abc.myTopic
+  resource: def.myTopic
   resourcePatternType: LITERAL
   permission: READ
-  grantedTo: anotherNamespace
+  grantedTo: myNamespace
